@@ -15,6 +15,4 @@ jobs:
     # Step 2: Update index.html
        # Check if the GitHub actor is the team leader
        # Run the following CLI command to update index.html
-      - run: |
-          sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
-          git config user.name > index.html
+      - run: sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
