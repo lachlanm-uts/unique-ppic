@@ -15,7 +15,9 @@ jobs:
     # Step 2: Update index.html
        # Check if the GitHub actor is the team leader
        # Run the following CLI command to update index.html
-      - run: sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
+      - name: Update index.html file
+        run: sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
     # Step 3: Update README
       # Append a log entry to README file
-      - run: echo "###Updated by ${{ github.triggering_actor }} on $(date '+%Y-%m-%d %H:%M:%S')[Commit: $(git rev-parse --short HEAD)]" >> README.md 
+      - name: Update README
+        run: echo "###Updated by ${{ github.triggering_actor }} on $(date '+%Y-%m-%d %H:%M:%S')[Commit: $(git rev-parse --short HEAD)]" >> README.md 
