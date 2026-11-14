@@ -1,0 +1,18 @@
+name: Collaborative Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update_html_and_readme:
+    runs-on: ubuntu-latest
+    steps:
+    # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+    # Step 2: Update index.html
+       # Check if the GitHub actor is the team leader
+       # Run the following CLI command to update index.html
+       sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
