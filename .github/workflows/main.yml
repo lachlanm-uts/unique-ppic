@@ -28,3 +28,5 @@ jobs:
           fi
     # Step 3: Update README
       # Append a log entry to README file
+       run: |
+          echo "### Updated by ${{ github.actor }} on $(date '+%Y-%m-%d %H:%M:%S') [Commit: $(git rev-parse --short HEAD)]" >> README.md
